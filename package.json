@@ -1,38 +1,24 @@
 {
   "name": "web",
   "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/BibleBot/web",
+  "author": "Kerygma Digital",
+  "license": "MPL-2.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "direnv exec . yarn build && direnv exec . node index.js",
+    "build": "cd client && yarn install && yarn build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "connect-sqlite3": "^0.9.13",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.3.0",
+    "passport": "^0.5.2",
+    "passport-discord": "^0.1.4",
+    "passport-oauth2-refresh": "^2.1.0",
+    "yarn": "^1.22.18"
   }
 }
