@@ -1,5 +1,7 @@
+@import '../index.css';
+
 section {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'HKGrotesk', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
   padding: 48px 20px;
@@ -82,6 +84,7 @@ section img {
 .three-columns {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 35px;
 }
 
 .column {
@@ -107,6 +110,7 @@ section img {
   position: relative;
   text-align: center;
   color: white;
+  border-radius: 15px;
 }
 
 .centralized-cover {
@@ -114,9 +118,60 @@ section img {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
 }
 
 .centralized-cover h1 {
-  font-size: 36px;
+  font-size: 48px;
+  color: #9992e2;
+  -webkit-text-stroke: 0.1px #252525;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-shadow: 0px 2px 3px #252525;
+}
+
+.parallax-cover {
+  background-image: url("https://biblebot.xyz/wp-content/uploads/sites/2/2021/02/bibleinhand-2048x1367.jpg");
+  min-height: 423px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax-cover {
+    background-attachment: scroll;
+  }
+}
+
+h1.center {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 65px;
+}
+
+.recent-post {
+  border-radius: 5px;
+  border: 2px solid #9998e2;
+  background-color: #666272;
+}
+
+.recent-post h2 {
+  width: 100%;
+  background-color: #6662E3;
+  margin-top: 55px;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
+.recent-post h3 {
+  background-color: #6662a2;
+  text-align: center;
+  padding: 3px;
+  margin-top: -4px;
+}
+
+.recent-post p {
+  padding: 0px 30px 30px 30px;
 }

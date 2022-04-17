@@ -43,8 +43,16 @@ const Version = mongoose.model('Version', new mongoose.Schema({
     SupportsDeuterocanon: Boolean
 }, { collection: 'Versions' }))
 
+const FrontendStat = mongoose.model('FrontendStat', new mongoose.Schema({
+    ShardCount: Number,
+    ServerCount: Number,
+    UserCount: Number,
+    ChannelCount: Number
+}, { collection: 'FrontendStats' }))
+
 module.exports = {
     User,
     Guild,
-    Version
+    Version,
+    FrontendStat
 }

@@ -1,5 +1,7 @@
+@import '../index.css';
+
 .storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'HKGrotesk', 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
   border-radius: 3em;
@@ -11,8 +13,8 @@
   color: #252525;
   background-color: #9893e2;
   border: 2px solid #9893e2;
-  transition: background-color .5s;
   transition: border-color .5s;
+  transition: background-color .5s;
 }
 .storybook-button--primary:hover {
   background-color: #6662e2;
@@ -22,10 +24,12 @@
   color: #9893e2;
   background-color: #252525;
   border: 2px solid #9893e2;
+  transition: border-color .5s;
   transition: color .5s;
 }
 .storybook-button--secondary:hover {
   color: #6662e2;
+  border-color: #6662e2;
 }
 .storybook-button--small {
   font-size: 12px;
@@ -38,4 +42,12 @@
 .storybook-button--large {
   font-size: 16px;
   padding: 12px 24px;
+}
+
+.storybook-button span:only-child svg {
+  margin: 0px;
+}
+
+.storybook-button span svg {
+  margin: 0px 5px 0px 0px;
 }

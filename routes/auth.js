@@ -39,7 +39,7 @@ passport.deserializeUser((user, cb) => {
     })
 })
 
-router.get("/auth/login/success", (req, res) => {
+router.get("/login/success", (req, res) => {
     if (req.user) {
       res.json({
         success: true,
@@ -50,25 +50,25 @@ router.get("/auth/login/success", (req, res) => {
     }
 })
 
-router.get("/auth/login/failed", (req, res) => {
+router.get("/login/failed", (req, res) => {
     res.status(401).json({
       success: false,
       message: "user failed to authenticate."
     });
 })
 
-router.get("/auth/logout", (req, res) => {
+router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("http://localhost:3001");
 });
 
-router.get("/auth/discord", passport.authenticate("discord"));
+router.get("/discord", passport.authenticate("discord"));
 
 router.get(
-  "/auth/callback",
+  "/callback",
   passport.authenticate("discord", {
     successRedirect: "http://localhost:3001/",
-    failureRedirect: "/auth/login/failed"
+    failureRedirect: "/login/failed"
   })
 );
 module.exports = router;

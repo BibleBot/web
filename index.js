@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
-const auth = require('./routes/auth');
+const api = require('./routes/api');
 const session = require('express-session');
 const passport = require('passport');
 const SQLiteStore = require('connect-sqlite3')(session);
@@ -24,7 +24,7 @@ app.use(session({
 }));
 app.use(passport.authenticate('session'));
 
-app.use('/api', auth)
+app.use('/api', api);
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));

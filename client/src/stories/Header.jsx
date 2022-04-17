@@ -5,6 +5,7 @@ import { Button } from './Button';
 import './header.css';
 import logo from '../assets/logo-dc-crop.png';
 import { NavLink } from 'react-router-dom';
+import { solid, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 export const Header = ({ user, onLogin, onLogout }) => (
   <header>
@@ -27,17 +28,19 @@ export const Header = ({ user, onLogin, onLogout }) => (
         {user ? (
           <>
             <span className="welcome">
-              <img src={user.avatar} alt="Your Avatar" />
+              <NavLink to="/profile">
+                <img src={user.avatar} alt="Your Avatar" />
+              </NavLink>
               &nbsp;&nbsp;
               <NavLink to="/dashboard">
-                <Button primary size="small" label="Dashboard" />
+                <Button primary size="small" icon={solid("gear")} label="Dashboard" />
               </NavLink>
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <Button size="small" onClick={onLogout} icon={solid("arrow-right-from-bracket")} label="Logout" />
           </>
         ) : (
           <>
-            <Button primary size="small" onClick={onLogin} label="Log in with Discord" />
+            <Button primary size="small" onClick={onLogin} icon={brands("discord")} label="Login with Discord" />
           </>
         )}
       </div>

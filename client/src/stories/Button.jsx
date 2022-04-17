@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
+export const Button = ({ primary, backgroundColor, size, icon, label, ...props }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
@@ -14,7 +15,8 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
-      {label}
+      {icon && <span><FontAwesomeIcon icon={icon} /></span> }
+      {label && <span>{label}</span>}
     </button>
   );
 };
@@ -32,10 +34,11 @@ Button.propTypes = {
    * How large should the button be?
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  icon: PropTypes.element,
   /**
    * Button contents
    */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   /**
    * Optional click handler
    */

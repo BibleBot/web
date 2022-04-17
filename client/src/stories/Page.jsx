@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Footer } from './Footer';
 
 import { Header } from './Header';
 import { Index } from './Index';
@@ -59,6 +60,8 @@ export class Page extends Component {
             </Routes>
           </section>
         </article>
+
+        <Footer />
       </BrowserRouter>
     );
   }
